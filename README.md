@@ -1,39 +1,48 @@
-# modbus slave simulator in C
-[![GitHub tag](https://img.shields.io/github/tag/taka-wang/c-modbus-slave.svg)](https://github.com/taka-wang/c-modbus-slave/tags) 
-[![Release](https://img.shields.io/github/release/taka-wang/c-modbus-slave.svg)](https://github.com/taka-wang/c-modbus-slave/releases/latest)
-[![](https://imagelayers.io/badge/takawang/c-modbus-slave:latest.svg)](https://imagelayers.io/?images=takawang/c-modbus-slave:latest 'Get your own badge on imagelayers.io')
+# Modbus slave simulator in C
+
+[![Docker](https://img.shields.io/badge/docker-ready-brightgreen.svg)](https://hub.docker.com/r/edgepro/c-modbus-slave/)
 
 Dummy modbus slave server in C
 
+## Continuous Integration
 
-## Build
+I do continuous integration and build docker images after git push by self-hosted [drone.io](http://armdrone.cmwang.net) server for armhf platform , [circleci](http://circleci.com) server for x86 platform and [dockerhub](https://hub.docker.com/r/edgepro/c-modbus-slave/) service.
+
+| CI       | Platform  | Status                                                                                                                                 |
+|----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Travis   | x86       | [![Build Status](https://travis-ci.org/taka-wang/c-modbus-slave.svg?branch=master)](https://travis-ci.org/taka-wang/c-modbus-slave)    |
+| CircleCI | x86       | [![CircleCI](https://circleci.com/gh/taka-wang/c-modbus-slave.svg?style=shield)](https://circleci.com/gh/taka-wang/c-modbus-slave)     |
+| Drone    | armhf     | [![Build Status](http://armdrone.cmwang.net/api/badges/taka-wang/c-modbus-slave/status.svg)](http://armdrone.cmwang.net/taka-wang/c-modbus-slave)|
+
+## Pre-built docker images
+
+You can download pre-built docker images from the [dockerhub](https://hub.docker.com/r/edgepro/c-modbus-slave/tags/).
+
+## From source code
+
 ```bash
 gcc server.c -o server -Wall -std=c99 `pkg-config --libs --cflags libmodbus`
 ```
 
-## Docker
+## From docker file (x86)
 
-### From the scratch
 ```bash
-# build docker image 
-docker build -t takawang/c-modbus-slave .
-
-# build arm version image 
-#docker build -t takawang/arm-c-modbus-slave -f Dockerfile.arm .
-
-# run the image (host_port:container_port)
-docker run -p 502:502 -d --name slave takawang/c-modbus-slave
-# Print app output
-docker logs <container id>
-# Enter the container
-docker exec -it <container id> /bin/bash
+docker build -t c-modbus-slave:x86 .
 ```
 
-### [Pull pre-built docker image](https://hub.docker.com/r/takawang/c-modbus-slave/)
+## From docker file (armhf)
 
 ```bash
-docker pull takawang/c-modbus-slave
+docker build -t c-modbus-slave:armhf -f Dockerfile.armhf .
 ```
 
 ## Credit
-According to [libmodbus tests](https://github.com/stephane/libmodbus/tree/master/tests).
+
+This simulator is derived from [libmodbus tests](https://github.com/stephane/libmodbus/tree/master/tests).
+
+---
+
+## License
+
+MIT
+

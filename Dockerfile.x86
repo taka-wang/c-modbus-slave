@@ -1,12 +1,7 @@
-#
-# modbus slave simulator in C
-#
-
-FROM alpine:latest
+# x86
+FROM takawang/alpine:x86
 MAINTAINER Taka Wang <taka@cmwang.net>
 
-ENV ZMQ_VERSION 3.2.5
-ENV CZMQ_VERSION 3.0.2
 ENV MB_VERSION 3.1.4
 
 RUN apk update \
@@ -27,7 +22,7 @@ RUN apk update \
     && echo " ... build mbserver" \
         && cd /tmp/ \
         && git clone https://github.com/taka-wang/c-modbus-slave.git \
-        && cd c-modbus-slave \
+        && cd c-modbus-slave/src \
         && gcc server.c -o server -Wall -std=c99 `pkg-config --libs --cflags libmodbus` \
         && chmod +x server \
         && cp server /usr/bin/ \
@@ -39,10 +34,6 @@ RUN apk update \
             git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
         && rm -rf /var/cache/apk/* 
 
-RUN apk update \
-    && apk add libgcc libstdc++
-
 EXPOSE 502
 
-## Default command
-CMD /usr/bin/server
+CMD /usr/bin/server & /usr/bin/server 503
