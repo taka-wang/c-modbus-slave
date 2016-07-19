@@ -1,0 +1,15 @@
+sudo: required
+
+language: c
+
+services:
+    - docker
+
+script:
+    - docker build --no-cache=true -t c-modbus-slave -f Dockerfile.x86 .
+    - docker run -itd --name=slave c-modbus-slave
+    - docker logs slave
+    - docker rm -f slave
+
+notifications:
+    email: false
