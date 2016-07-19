@@ -34,4 +34,4 @@ docker pull takawang/c-modbus-slave
 ```
 
 ## Credit
-According to [libmodbus tests|https://github.com/stephane/libmodbus/tree/master/tests].
+According to [libmodbus tests](https://github.com/stephane/libmodbus/tree/master/tests).
