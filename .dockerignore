@@ -1,0 +1,5 @@
+*.md
+.drone.*
+Dockerfile.*
+*.yml
+LICENSE

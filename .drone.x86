@@ -1,0 +1,20 @@
+# drone.io v0.5
+# x86
+
+pipeline:
+    build:
+        image: takawang/dind:${arch}
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        commands:
+            - docker build --no-cache=true -t c-modbus-slave:${arch} -f Dockerfile.${arch} .
+            - docker run -itd --name=slave c-modbus-slave:${arch}
+            - docker logs slave
+            - docker rm -f slave
+            
+            ## push from circleci
+            #- docker push edgepro/c-modbus-slave:${arch}
+
+matrix:
+    arch:
+        - x86

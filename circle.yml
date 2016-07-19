@@ -1,0 +1,30 @@
+
+machine:
+    timezone:
+        Asia/Taipei
+    services:
+        - docker
+
+# docker build
+dependencies:
+    override:
+        - docker info
+        - docker build --no-cache=true -t edgepro/c-modbus-slave -f Dockerfile.x86 .
+
+# docker run
+test:
+    override:
+        - docker run -itd --name=slave edgepro/c-modbus-slave
+        - docker logs slave
+    post:
+        #- docker rm -f slave
+
+# publish to dockerhub
+deployment:
+    hub:
+        branch: master
+        commands:
+            - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+            - docker tag  edgepro/c-modbus-slave edgepro/c-modbus-slave:x86
+            - docker push edgepro/c-modbus-slave
+            - docker push edgepro/c-modbus-slave:x86
