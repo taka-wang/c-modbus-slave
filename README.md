@@ -29,7 +29,8 @@ docker logs <container id>
 docker exec -it <container id> /bin/bash
 ```
 
-### Pull pre-built docker image
+### [Pull pre-built docker image](https://hub.docker.com/r/takawang/c-modbus-slave/)
+
 ```bash
 docker pull takawang/c-modbus-slave
 ```
