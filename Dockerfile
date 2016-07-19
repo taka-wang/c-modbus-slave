@@ -26,8 +26,8 @@ RUN apk update \
     
     && echo " ... build mbserver" \
         && cd /tmp/ \
-        && git clone https://github.com/taka-wang/modbusd.git \
-        && cd /tmp/modbusd/tests/cmbserver/ \
+        && git clone https://github.com/taka-wang/c-modbus-slave.git \
+        && cd c-modbus-slave \
         && gcc server.c -o server -Wall -std=c99 `pkg-config --libs --cflags libmodbus` \
         && chmod +x server \
         && cp server /usr/bin/ \
