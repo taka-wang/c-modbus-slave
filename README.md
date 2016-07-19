@@ -1,7 +1,7 @@
 # modbus slave simulator in C
-[![GitHub tag](https://img.shields.io/github/tag/taka-wang/modbus-cserver.svg)](https://github.com/taka-wang/modbus-cserver/tags) 
-[![Release](https://img.shields.io/github/release/taka-wang/modbus-cserver.svg)](https://github.com/taka-wang/modbus-cserver/releases/latest)
-[![](https://imagelayers.io/badge/takawang/modbus-cserver:latest.svg)](https://imagelayers.io/?images=takawang/modbus-cserver:latest 'Get your own badge on imagelayers.io')
+[![GitHub tag](https://img.shields.io/github/tag/taka-wang/c-modbus-slave.svg)](https://github.com/taka-wang/c-modbus-slave/tags) 
+[![Release](https://img.shields.io/github/release/taka-wang/c-modbus-slave.svg)](https://github.com/taka-wang/c-modbus-slave/releases/latest)
+[![](https://imagelayers.io/badge/takawang/c-modbus-slave:latest.svg)](https://imagelayers.io/?images=takawang/c-modbus-slave:latest 'Get your own badge on imagelayers.io')
 
 Dummy modbus slave server in C
 
