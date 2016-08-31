@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>C-modbus-slave by taka-wang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">C-modbus-slave</h1>
+      <h2 class="project-tagline">Modbus slave simulator in C</h2>
+      <a href="https://github.com/taka-wang/c-modbus-slave" class="btn">View on GitHub</a>
+      <a href="https://github.com/taka-wang/c-modbus-slave/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/taka-wang/c-modbus-slave/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="modbus-slave-simulator-in-c" class="anchor" href="#modbus-slave-simulator-in-c" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modbus slave simulator in C</h1>
+
+<p><a href="https://hub.docker.com/r/edgepro/c-modbus-slave/"><img src="https://img.shields.io/badge/docker-ready-brightgreen.svg" alt="Docker"></a></p>
+
+<p>Dummy modbus slave server in C</p>
+
+<h2>
+<a id="continuous-integration" class="anchor" href="#continuous-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Continuous Integration</h2>
+
+<p>I do continuous integration and build docker images after git push by self-hosted <a href="http://armdrone.cmwang.net">drone.io</a> server for armhf platform , <a href="http://circleci.com">circleci</a> server for x86 platform and <a href="https://hub.docker.com/r/edgepro/c-modbus-slave/">dockerhub</a> service.</p>
+
+<table>
+<thead>
+<tr>
+<th>CI</th>
+<th>Platform</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Travis</td>
+<td>x86</td>
+<td><a href="https://travis-ci.org/taka-wang/c-modbus-slave"><img src="https://travis-ci.org/taka-wang/c-modbus-slave.svg?branch=master" alt="Build Status"></a></td>
+</tr>
+<tr>
+<td>CircleCI</td>
+<td>x86</td>
+<td><a href="https://circleci.com/gh/taka-wang/c-modbus-slave"><img src="https://circleci.com/gh/taka-wang/c-modbus-slave.svg?style=shield" alt="CircleCI"></a></td>
+</tr>
+<tr>
+<td>Drone</td>
+<td>armhf</td>
+<td><a href="http://armdrone.cmwang.net/taka-wang/c-modbus-slave"><img src="http://armdrone.cmwang.net/api/badges/taka-wang/c-modbus-slave/status.svg" alt="Build Status"></a></td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="pre-built-docker-images" class="anchor" href="#pre-built-docker-images" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pre-built docker images</h2>
+
+<p>You can download pre-built docker images from the <a href="https://hub.docker.com/r/edgepro/c-modbus-slave/tags/">dockerhub</a>.</p>
+
+<h2>
+<a id="from-source-code" class="anchor" href="#from-source-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>From source code</h2>
+
+<div class="highlight highlight-source-shell"><pre>gcc server.c -o server -Wall -std=c99 <span class="pl-s"><span class="pl-pds">`</span>pkg-config --libs --cflags libmodbus<span class="pl-pds">`</span></span></pre></div>
+
+<h2>
+<a id="from-docker-file-x86" class="anchor" href="#from-docker-file-x86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>From docker file (x86)</h2>
+
+<div class="highlight highlight-source-shell"><pre>docker build -t c-modbus-slave:x86 <span class="pl-c1">.</span></pre></div>
+
+<h2>
+<a id="from-docker-file-armhf" class="anchor" href="#from-docker-file-armhf" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>From docker file (armhf)</h2>
+
+<div class="highlight highlight-source-shell"><pre>docker build -t c-modbus-slave:armhf -f Dockerfile.armhf <span class="pl-c1">.</span></pre></div>
+
+<h2>
+<a id="credit" class="anchor" href="#credit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credit</h2>
+
+<p>This simulator is derived from <a href="https://github.com/stephane/libmodbus/tree/master/tests">libmodbus tests</a>.</p>
+
+<hr>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/taka-wang/c-modbus-slave">C-modbus-slave</a> is maintained by <a href="https://github.com/taka-wang">taka-wang</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
