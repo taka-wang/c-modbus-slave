@@ -11,6 +11,7 @@ pipeline:
             - docker run -itd --name=slave c-modbus-slave:${arch}
             - docker logs slave
             - docker rm -f slave
+            
             ## push from circleci
             #- docker push edgepro/c-modbus-slave:${arch}
 

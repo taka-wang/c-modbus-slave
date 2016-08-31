@@ -36,4 +36,7 @@ RUN apk update \
 
 EXPOSE 502
 
+#ENTRYPOINT ["/usr/bin/server"]
+#CMD ["502"]
+
 CMD /usr/bin/server & /usr/bin/server 503
