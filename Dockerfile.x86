@@ -1,13 +1,12 @@
 # x86
 FROM takawang/alpine:x86
-MAINTAINER Taka Wang <taka@cmwang.net>
+LABEL maintainer="taka@cmwang.net"
 
-ENV MB_VERSION 3.1.4
+ENV MB_VERSION 3.1.6
 
 RUN apk update \
     && apk add \
            git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
-    
     && echo " ... adding libmodbus" \
          && curl -L http://libmodbus.org/releases/libmodbus-${MB_VERSION}.tar.gz -o /tmp/libmodbus.tar.gz \
          && cd /tmp/ \
@@ -18,7 +17,6 @@ RUN apk update \
                         --mandir=/usr/share/man \
                         --infodir=/usr/share/info \
          && make && make install \
-    
     && echo " ... build mbserver" \
         && cd /tmp/ \
         && git clone https://github.com/taka-wang/c-modbus-slave.git \
@@ -26,7 +24,6 @@ RUN apk update \
         && gcc server.c -o server -Wall -std=c99 `pkg-config --libs --cflags libmodbus` \
         && chmod +x server \
         && cp server /usr/bin/ \
-    
     && echo " ... clean up" \
         && rm -rf /tmp/* \
         && rm /usr/lib/*.a && rm /usr/lib/*.la \

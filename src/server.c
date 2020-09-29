@@ -83,15 +83,15 @@ int main(int argc, char *argv[])
     //                       4x table
     // --------------------------------------------------------------//
     const uint16_t UT_REGISTERS_NB = 0x9;
-    const uint16_t UT_REGISTERS_TAB[] = { 0x000A, 
-                                                0x000B, 
-                                                0x000C, 
-                                                0x000D, 
-                                                0x000E, 
-                                                0x000F, 
-                                                0x0001, 
-                                                0x0002, 
-                                                0x0003 };
+    const uint16_t UT_REGISTERS_TAB[] = {   0x000A, 
+                                            0x000B, 
+                                            0x000C, 
+                                            0x000D, 
+                                            0x000E, 
+                                            0x000F, 
+                                            0x0001, 
+                                            0x0002, 
+                                            0x0003 };
 
     
     for (int i = 0; i < UT_REGISTERS_NB; i++) 

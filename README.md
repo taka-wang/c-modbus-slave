@@ -12,7 +12,6 @@ I do continuous integration and build docker images after git push by self-hoste
 |----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------|
 | Travis   | x86       | [![Build Status](https://travis-ci.org/taka-wang/c-modbus-slave.svg)](https://travis-ci.org/taka-wang/c-modbus-slave)    |
 | CircleCI | x86       | [![CircleCI](https://circleci.com/gh/taka-wang/c-modbus-slave.svg?style=shield)](https://circleci.com/gh/taka-wang/c-modbus-slave)     |
-| Drone    | armhf     | [![Build Status](http://armdrone.cmwang.net/api/badges/taka-wang/c-modbus-slave/status.svg)](http://armdrone.cmwang.net/taka-wang/c-modbus-slave)|
 
 ## Pre-built docker images
 
